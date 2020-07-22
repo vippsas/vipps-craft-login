@@ -1,0 +1,37 @@
+{
+  "name": "vippsas/vipps-craft-login",
+  "description": "Vipps Login Integration for CraftCMS",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "keywords": ["vipps", "login", "authentication", "craft", "craftcms"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ellera AS",
+      "homepage": "https://ellera.no"
+    }
+  ],
+  "support": {
+    "email": "support@ellera.no",
+    "issues": "https://github.com/vippsas/vipps-craft-login/issues?state=open",
+    "source": "https://github.com/vippsas/vipps-craft-login",
+    "docs": "https://github.com/vippsas/vipps-craft-login/blob/master/README.md"
+  },
+  "require": {
+    "craftcms/cms": "^3.1.0",
+    "guzzlehttp/guzzle": ">=6.3.0 <6.5.0 || ^6.5.1",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "vippsas\\login\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Vipps Login",
+    "handle": "vipps-login",
+    "documentationUrl": "https://github.com/vippsas/vipps-craft-login/blob/master/README.md",
+    "changelogUrl": "https://github.com/vippsas/vipps-craft-login/blob/master/CHANGELOG.md",
+    "class": "vippsas\\login\\VippsLogin"
+  }
+}

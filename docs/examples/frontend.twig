@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>Welcome to Craft CMS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+</head>
+<body>
+
+<div class="container">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="https://vipps.no">
+                <img src="https://vipps.no/static/vipps_frontend/1.1.7/media/extra-images/vipps-logo.svg" width="112" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+
+            </div>
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        {% if currentUser %}
+                            <a href="{{ logoutUrl }}">Logout ({{ currentUser.friendlyName }})</a>
+                        {% else %}
+                            {{ craft.vippsLogin.loginButton.render('rel="external"', 'title="Log in with Vipps" class="btn"') | raw }}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <div>
+            {% set messages = craft.app.session.getAllFLashes(true) %}
+
+            {% for key, message in messages %}
+                <div class="notification is-{{ key }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        <div class="content">
+            <div class="has-text-centered">
+                <p class="is-5">Kontakt oss</p>
+                {% if not craft.vippsLogin.session %}
+                    {{ craft.vippsLogin.continueButton.render('rel="external"', 'title="Continue with Vipps" class="btn"') | raw }}
+                {% else %}
+                    <a href="#" class="button">Fortsett som {{ craft.vippsLogin.session.getGivenName }}</a><br>
+                    <a href="/vipps/login/forget" class="button small">Fortsett som noen andre</a>
+                {% endif %}
+            </div>
+        </div>
+
+        {% if craft.vippsLogin.session %}
+            <div class="columns">
+                <div class="column is-half">
+                    <div class="table-container">
+                        <table class="table">
+                            <tr>
+                                <td>Given Name</td>
+                                <td>{{ craft.vippsLogin.session.getGivenName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Family Name</td>
+                                <td>{{ craft.vippsLogin.session.getFamilyName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Name</td>
+                                <td>{{ craft.vippsLogin.session.getName }}</td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td>{{ craft.vippsLogin.session.getEmail }}{% if craft.vippsLogin.session.isEmailVerified  %} (Verified){% endif %}</td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>{{ craft.vippsLogin.session.getPhoneNumber }}</td>
+                            </tr>
+                            <tr>
+                                <td>SID</td>
+                                <td>{{ craft.vippsLogin.session.getSid }}</td>
+                            </tr>
+                            <tr>
+                                <td>SUB</td>
+                                <td>{{ craft.vippsLogin.session.getSub }}</td>
+                            </tr>
+                            <tr>
+                                <td>Expires in</td>
+                                <td>{{ craft.vippsLogin.session.getExpiresIn }} seconds</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="column is-half">
+                    <pre>
+                        {{ dump(craft.vippsLogin.session.getData) }}
+                    </pre>
+                </div>
+            </div>
+        {% endif %}
+    </section>
+</div>
+
+</body>
+</html>

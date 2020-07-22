@@ -1,0 +1,22 @@
+{% extends "_layouts/cp" %}
+
+{% set tabs = {
+    "general": {label: "General"|t('vipps-login'), url: "#general"},
+    "login": {label: "Log In with Vipps"|t('vipps-login'), url: "#login"},
+    "continue": {label: "Continue with Vipps"|t('vipps-login'), url: "#continue"},
+} %}
+
+{% block content %}
+
+    <input type="hidden" name="action" value="vipps-login/settings/save-plugin-settings">
+
+    {# -- General settings -- #}
+    {% include "vipps-login/settings/_includes/general" %}
+
+    {# -- Login settings -- #}
+    {% include "vipps-login/settings/_includes/login" %}
+
+    {# -- Continue settings -- #}
+    {% include "vipps-login/settings/_includes/continue" %}
+
+{% endblock %}

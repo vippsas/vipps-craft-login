@@ -1,0 +1,75 @@
+{% import "_includes/forms" as forms %}
+
+<div id="general">
+
+    {% namespace "settings" %}
+
+        <h1>Setup</h1>
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('test'),
+            name: 'test',
+            on: settings.test,
+            instructions: 'Use Vipps Test Environment (For development)',
+            errors: settings.getErrors('test')
+        }) }}
+
+        <div class="fields">
+            <div style="padding-right: 5%; display: inline-block; width: 45%;">
+                <h2>Test Credentials</h2>
+
+                {{ forms.textField({
+                    label: settings.getAttributeLabel('test_client_id'),
+                    name: 'test_client_id',
+                    value: settings.test_client_id,
+                    instructions: 'Client ID (Test Environment)',
+                    errors: settings.getErrors('test_client_id')
+                }) }}
+
+                {{ forms.textField({
+                    label: settings.getAttributeLabel('test_client_secret'),
+                    name: 'test_client_secret',
+                    value: settings.test_client_secret,
+                    instructions: 'Client Secret (Test Environment)',
+                    errors: settings.getErrors('test_client_secret')
+                }) }}
+
+                {{ forms.textField({
+                    label: settings.getAttributeLabel('test_subscription_key'),
+                    name: 'test_subscription_key',
+                    value: settings.test_subscription_key,
+                    instructions: 'Subscription Key (Test Environment)',
+                    errors: settings.getErrors('test_subscription_key')
+                }) }}
+            </div>
+            <div style="display: inline-block; width: 45%;">
+                <h2>Production Credentials</h2>
+
+                {{ forms.textField({
+                    label: settings.getAttributeLabel('prod_client_id'),
+                    name: 'prod_client_id',
+                    value: settings.prod_client_id,
+                    instructions: 'Client ID (Production Environment)',
+                    errors: settings.getErrors('prod_client_id')
+                }) }}
+
+                {{ forms.textField({
+                    label: settings.getAttributeLabel('prod_client_secret'),
+                    name: 'prod_client_secret',
+                    value: settings.prod_client_secret,
+                    instructions: 'Client Secret (Production Environment)',
+                    errors: settings.getErrors('prod_client_secret')
+                }) }}
+
+                {{ forms.textField({
+                    label: settings.getAttributeLabel('prod_subscription_key'),
+                    name: 'prod_subscription_key',
+                    value: settings.prod_subscription_key,
+                    instructions: 'Subscription Key Test Environment',
+                    errors: settings.getErrors('prod_subscription_key')
+                }) }}
+            </div>
+        </div>
+
+    {% endnamespace %}
+
+</div>

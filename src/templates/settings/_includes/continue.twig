@@ -1,0 +1,72 @@
+{% import "_includes/forms" as forms %}
+
+<div id="continue" class="hidden">
+
+    {% namespace "settings" %}
+
+        <h2>Continue with Vipps</h2>
+
+        <div class="field" style="display: inline-block; width: 45%;">
+            <div class="heading">
+                <label class="">Redirect URIs</label>
+                <div class="instructions"><p>{{ 'Use this to fill in "Redirect URI" during Login Setup in Vipps portal' |t('vipps-login') }}</p>
+                </div>
+            </div>
+            <div class="input ltr">
+                <code>{{ settings.getRedirectUri('continue') }}</code>
+            </div>
+        </div>
+
+        <h2>Scopes</h2>
+
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('continue_address'),
+            name: 'continue_address',
+            on: settings.continue_address,
+            instructions: 'Request the address field',
+            errors: settings.getErrors('continue_address')
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('continue_birthDate'),
+            name: 'continue_birthDate',
+            on: settings.continue_birthDate,
+            instructions: 'Request the Birth Date field',
+            errors: settings.getErrors('continue_birthDate')
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('continue_email'),
+            name: 'continue_email',
+            on: settings.continue_email,
+            instructions: 'Request the Email field',
+            errors: settings.getErrors('continue_email')
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('continue_name'),
+            name: 'continue_name',
+            on: settings.continue_name,
+            instructions: 'Request the Name field',
+            errors: settings.getErrors('continue_name')
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('continue_phoneNumber'),
+            name: 'continue_phoneNumber',
+            on: settings.continue_phoneNumber,
+            instructions: 'Request the Phone Number field',
+            errors: settings.getErrors('continue_phoneNumber')
+        }) }}
+
+        {{ forms.lightswitchField({
+            label: settings.getAttributeLabel('continue_nin'),
+            name: 'continue_nin',
+            on: settings.continue_nin,
+            instructions: 'Request the Norwegian National Identification Number field',
+            errors: settings.getErrors('continue_nin')
+        }) }}
+
+    {% endnamespace %}
+
+</div>
