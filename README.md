@@ -1,5 +1,21 @@
-# Craft Vipps
-Vipps Integration for CraftCMS / CraftCommerce
+# Vipps Login for CraftCMS
+
+**This plugin is currently a test pilot (pre-release). It is very likely that you will encounter bugs or scenarios that are not yet supported.**
+
+**Please keep up to date with updates as soon as they happen. They are very important in this pre-release period.**
+
+**We encourage you to create an issue here if you require assistance or run in to a problem.**
+
+This plugin provides Vipps Login Integration for CraftCMS / CraftCommerce
+
+# Description
+
+This is the official Vipps Login plugin for [CraftCMS](https://craftcms.com). It is owned by [Vipps AS](https://vipps.no) and maintained by [Ellera AS](https://ellera.no).
+
+With Vipps Login for CraftCMS you can
+- Get information about users and visitors via Vipps
+- Let users sign up and log in with Vipps
+- Link their existing account to Vipps
 
 ## Rendering the button
 To render the login button anywhere you can utilize the `loginButton.render()` function of the component the plugin registers.
@@ -15,29 +31,33 @@ The button can be modified by adding functions between `loginButton` and `render
 
 | Function | Description | Example |
 | --- | --- | --- |
-| `en` or `english` | English text | {{ craft.vippsLogin.loginButton.en.render() | raw }} |
-| `no` or `norwegian` | Norwegian text (Default) | {{ craft.vippsLogin.loginButton.no.render() | raw }} |
-| `pill` | Pill shape | {{ craft.vippsLogin.loginButton.pill.render() | raw }} |
-| `rect` or `rectangle` | Rectangle shape (Default) | {{ craft.vippsLogin.loginButton.rect.render() | raw }} |
-| `small` | Small size, 210px | {{ craft.vippsLogin.loginButton.small.render() | raw }} |
-| `large` | Large Size, 250px (Default) | {{ craft.vippsLogin.loginButton.large.render() | raw }} |
-| `continue` | Change the login button to Continue | {{ craft.vippsLogin.loginButton.continue.render() | raw }} |
-| `login` | Change the continue button to Login | {{ craft.vippsLogin.continueButton.login.render() | raw }} |
-| `register` | Change the button to Register | {{ craft.vippsLogin.continueButton.register.render() | raw }} |
+| `en` or `english` | English text | `craft.vippsLogin.loginButton.en.render()` |
+| `no` or `norwegian` | Norwegian text (Default) | `craft.vippsLogin.loginButton.no.render()` |
+| `pill` | Pill shape | `craft.vippsLogin.loginButton.pill.render()` |
+| `rect` or `rectangle` | Rectangle shape (Default) | `craft.vippsLogin.loginButton.rect.render()` |
+| `small` | Small size, 210px | `craft.vippsLogin.loginButton.small.render()` |
+| `large` | Large Size, 250px (Default) | `craft.vippsLogin.loginButton.large.render()` |
+| `continue` | Change the login button to Continue | `craft.vippsLogin.loginButton.continue.render()`|
+| `login` | Change the continue button to Login | `craft.vippsLogin.continueButton.login.render()` |
+| `register` | Change the button to Register | `craft.vippsLogin.continueButton.register.render()` |
 
 These functions can be combined;
 ```
 {{ craft.vippsLogin.loginButton.en.pill.small.render() | raw }}
 ```
 
-You can also add parameters to the `<a>` and `<img> tag by providing a string in the render function: `render(a, img)`
+You can also add parameters to the `<a>` and `<img>` tag by providing a string in the render function: `render(a, img)`
 
-```
 Append the a tag: 
+```
 {{ craft.vippsLogin.loginButton.render('rel="external"') | raw }}
+```
 Append the img tag: 
+```
 {{ craft.vippsLogin.loginButton.render(null, 'title="Login with Vipps" class="btn"') | raw }}
+```
 Append to both:
+```
 {{ craft.vippsLogin.loginButton.render('rel="external"', 'title="Login with Vipps" class="btn"') | raw }}
 ```
 
