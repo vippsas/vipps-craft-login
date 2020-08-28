@@ -17,6 +17,38 @@ With Vipps Login for CraftCMS you can
 - Let users sign up and log in with Vipps
 - Link their existing account to Vipps
 
+# Getting started
+
+## Installation
+
+- Sign up to use [Vipps Logg inn](https://vipps.no/produkter-og-tjenester/bedrift/logg-inn-med-vipps/logg-inn-med-vipps/)
+- Install the plugin via [Craft Plugin Store](https://plugins.craftcms.com)
+- Configure the Settings
+
+## Settings
+
+#### Find the Settings Page
+You can find the settings by navigating to Settings -> Vipps Login.
+![Plugin Settings: Location](docs/images/settings_location.png)
+
+#### Add your credentials
+Insert your credentials. You can find these in the [Vipps Portal](https://portal.vipps.no) 
+![Plugin Settings: Credentials](docs/images/settings_credentials.png)
+
+#### Activate Vipps Login and add the redirect URI
+In the [Vipps Portal](https://portal.vipps.no), activate Login with Vipps and add the Redirect URI as you find it under "Redirect URIs" in either "Login with Vipps" and/or "Continue with Vipps". 
+Also adjust the scopes to suit your applications needs.
+
+###### Setup Login
+![Plugin Settings: Credentials](docs/images/portal_setup_login.png)
+
+###### Add Redirect URIs
+![Plugin Settings: Credentials](docs/images/portal_redirect_uris.png)
+
+###### Locate Redirect URIs
+![Plugin Settings: Credentials](docs/images/settings_login.png)
+![Plugin Settings: Credentials](docs/images/settings_continue.png)
+
 ## Rendering the button
 To render the login button anywhere you can utilize the `loginButton.render()` function of the component the plugin registers.
 
@@ -165,3 +197,15 @@ Event::on(
 | `vippsas\login\events\ContinueEvent` | `VippsLogin::EVENT_USER_CONTINUED` | `getSession()` | Triggers when a user continues with vipps. |
 | `vippsas\login\events\RegisterEvent` | `VippsLogin::EVENT_USER_CREATED` | `getUser()`, `getSession()` | Triggers when a user registers with vipps. |
 | `vippsas\login\events\ConnectEvent` | `VippsLogin::EVENT_USER_CONNECTED_ACCOUNT` | `getUser()`, `getSession()` | Triggers when a user connects an existing account to vipps. |
+
+## Example Code
+
+Have a look at the twig template located in `docs/examples/frontend.twig` for some usage examples. The twig template uses Bulma CSS from a CDN and should work right out of the box if the plugin is installed correctly.
+
+# How can I get help if I have any issues?
+
+For Craft-related issues you should use the resources and communities available [here](https://craftcms.com/community). 
+
+For Plugin-related issues you should create a new issue in the [official repository](https://github.com/vippsas/vipps-craft-login/issues).
+
+For Vipps-related issues you should contact [Vipps Integration](https://github.com/vippsas/vipps-developers/blob/master/contact.md)
