@@ -13,6 +13,7 @@ use vippsas\login\events\LoggedInEvent;
 use vippsas\login\events\RegisterEvent;
 use vippsas\login\exceptions\AlreadyLoggedInException;
 use vippsas\login\exceptions\CreateUserException;
+use vippsas\login\exceptions\VerifiedEmailRequiredException;
 use vippsas\login\models\ConfirmPasswordForm;
 use vippsas\login\models\Session;
 use vippsas\login\records\User as VippsUser;
@@ -56,6 +57,8 @@ class VippsController extends Controller
 
         if($session = $this->setSessionFromLoginResponse($get))
         {
+            if(!$session->isEmailVerified()) throw new VerifiedEmailRequiredException('You need to have a vipps-verified email to use this feature.');
+
             $vipps_user = VippsUser::findOne($session->getSub());
             if($vipps_user && $user = $vipps_user->getUser())
             {
@@ -182,6 +185,9 @@ class VippsController extends Controller
                 if(is_object($res_obj) && isset($res_obj->access_token))
                 {
                     $session = new Session($res_obj);
+
+                    if(!$session->isEmailVerified()) throw new VerifiedEmailRequiredException('You need to have a vipps-verified email to use this feature.');
+
                     Craft::$app->session->set('vipps_login', serialize($session));
                     Craft::$app->session->setFlash('success', Craft::t('vipps-login', 'You are now logged in'));
                     VippsLogin::getInstance()->trigger(
