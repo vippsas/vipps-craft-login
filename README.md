@@ -200,7 +200,7 @@ Event::on(
 
 ## Example Code
 
-Have a look at the twig template located in `docs/examples/frontend.twig` for some usage examples. The twig template uses Bulma CSS from a CDN and should work right out of the box if the plugin is installed correctly.
+Have a look at the twig template located [here](https://github.com/vippsas/vipps-craft-login/blob/master/docs/examples/frontend.twig) for some usage examples. The twig template uses Bulma CSS from a CDN and should work right out of the box if the plugin is installed correctly.
 
 # How can I get help if I have any issues?
 
