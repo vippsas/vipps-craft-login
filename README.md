@@ -101,7 +101,7 @@ You can also call the function `craft.vippsLogin.getLoginUrl()` or `craft.vippsL
 ```
 
 ## Getting user information from Vipps
-As long as the user vipps token is not expired, you can access the user information with the session object.
+As long as the user's Vipps token is not expired, you can access the user information with the session object.
 ```
 {% if craft.vippsLogin.session %}
     <p>Hi, {{ craft.vippsLogin.session.getGivenName }}!</p>
@@ -112,8 +112,8 @@ As long as the user vipps token is not expired, you can access the user informat
 #### Attributes of the Session object
 | Attribute | Type |Description |
 | --- | --- | --- |
-| `isExpired` | boolean | Is the vipps session valid |
-| `getExpiresIn` | integer | How long til the vipps session expires |
+| `isExpired` | boolean | Is the Vipps session valid |
+| `getExpiresIn` | integer | How long til the Vipps session expires |
 | `getAddresses` | array | Array of registered addresses |
 | `getEmail` | string | User email |
 | `isEmailVerified` | boolean | Is the email verified |
@@ -124,7 +124,7 @@ As long as the user vipps token is not expired, you can access the user informat
 | `getSid` | string | Returns the Session ID |
 | `getSub` | string | Unique ID for this user |
 | `getNnin` | string | Returns the Norwegian National Identification Number |
-| `getBirthdate` | string | Returns the users birth date |
+| `getBirthdate` | string | Returns the users birthdate |
 
 
 ## Showing error messages
@@ -155,7 +155,7 @@ To make your own, make a new twig file in your templates folder and update the s
 If your template is located in `templates/vipps/verify` set the  "Verification Template" option to `vipps/verify`. Use our example template to see the logic and forms that needs to be present.
 
 ## Password verification and connecting to existing accounts
-When a user attempts to sign up with an email that already exist they are redirected to a password verification page. When they confirm their password the existing account is linked to the vipps account and the user can log in using Vipps.
+When a user attempts to sign up with an email that already exist they are redirected to a password verification page. When they confirm their password the existing account is linked to the Vipps account and the user can log in using Vipps.
 
 The password verification template provided by the plugin is just an example and can be found in `vendor/vippsas/src/templates/verify.twig`. Use this template as a starting point for implementing your own design. Update the field in `Settings -> Log In with Vipps -> Verification Template` with the new template path.
 
@@ -193,14 +193,14 @@ Event::on(
 #### Events
 | Event | Name | Functions | Description |
 | --- | --- | --- | --- |
-| `vippsas\login\events\LoggedInEvent` | `VippsLogin::EVENT_USER_LOGGED_IN` | `getUser()`, `getSession()` | Triggers when a user is logged in with vipps. |
-| `vippsas\login\events\ContinueEvent` | `VippsLogin::EVENT_USER_CONTINUED` | `getSession()` | Triggers when a user continues with vipps. |
-| `vippsas\login\events\RegisterEvent` | `VippsLogin::EVENT_USER_CREATED` | `getUser()`, `getSession()` | Triggers when a user registers with vipps. |
-| `vippsas\login\events\ConnectEvent` | `VippsLogin::EVENT_USER_CONNECTED_ACCOUNT` | `getUser()`, `getSession()` | Triggers when a user connects an existing account to vipps. |
+| `vippsas\login\events\LoggedInEvent` | `VippsLogin::EVENT_USER_LOGGED_IN` | `getUser()`, `getSession()` | Triggers when a user is logged in with Vipps. |
+| `vippsas\login\events\ContinueEvent` | `VippsLogin::EVENT_USER_CONTINUED` | `getSession()` | Triggers when a user continues with Vipps. |
+| `vippsas\login\events\RegisterEvent` | `VippsLogin::EVENT_USER_CREATED` | `getUser()`, `getSession()` | Triggers when a user registers with Vipps. |
+| `vippsas\login\events\ConnectEvent` | `VippsLogin::EVENT_USER_CONNECTED_ACCOUNT` | `getUser()`, `getSession()` | Triggers when a user connects an existing account to Vipps. |
 
 ## Example Code
 
-Have a look at the twig template located in `docs/examples/frontend.twig` for some usage examples. The twig template uses Bulma CSS from a CDN and should work right out of the box if the plugin is installed correctly.
+Have a look at the twig template located [here](https://github.com/vippsas/vipps-craft-login/blob/master/docs/examples/frontend.twig) for some usage examples. The twig template uses Bulma CSS from a CDN and should work right out of the box if the plugin is installed correctly.
 
 # How can I get help if I have any issues?
 
@@ -208,4 +208,4 @@ For Craft-related issues you should use the resources and communities available 
 
 For Plugin-related issues you should create a new issue in the [official repository](https://github.com/vippsas/vipps-craft-login/issues).
 
-For Vipps-related issues you should contact [Vipps Integration](https://github.com/vippsas/vipps-developers/blob/master/contact.md)
+For Vipps-related issues, you should contact [Vipps](https://developer.vippsmobilepay.com/).
