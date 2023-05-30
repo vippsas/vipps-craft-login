@@ -1,16 +1,11 @@
 # Vipps Login for CraftCMS
 
-**This plugin is currently a test pilot (pre-release). It is very likely that you will encounter bugs or scenarios that are not yet supported.**
-
-**Please keep up to date with updates as soon as they happen. They are very important in this pre-release period.**
-
-**We encourage you to create an issue here if you require assistance or run in to a problem.**
-
-This plugin provides Vipps Login Integration for CraftCMS / CraftCommerce
+This plugin provides Vipps Login Integration for CraftCMS / CraftCommerce.
 
 # Description
 
 This is the official Vipps Login plugin for [CraftCMS](https://craftcms.com). It is owned by [Vipps AS](https://vipps.no) and maintained by [Ellera AS](https://ellera.no).
+This is hosted on [GitHub](https://github.com/elleracompany/vipps-craft-login).
 
 With Vipps Login for CraftCMS you can
 - Get information about users and visitors via Vipps
