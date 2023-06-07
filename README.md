@@ -22,7 +22,7 @@ This plugin provides *Vipps Login Integration for Craft CMS / CraftCommerce*.
 This is the official Vipps Login plugin for [Craft CMS](https://craftcms.com). It is owned by [Vipps AS](https://vipps.no) and maintained by [Ellera AS](https://ellera.no).
 This plugin is hosted at <https://github.com/elleracompany/vipps-craft-login>.
 
-With Vipps Login for Craft CMS you can:
+With *Vipps Login for Craft CMS* you can:
 
 - Get information about users and visitors via Vipps
 - Let users sign up and log in with Vipps
@@ -70,7 +70,7 @@ Also adjust the scopes to suit your application's needs.
 
 To render the login button anywhere, you can use the `loginButton.render()` function of the component the plugin registers.
 
-*Note: All these options work for the `continueButton` as well.*
+**Note: All these options work for the `continueButton` as well.*
 
 ```php
 {{ craft.vippsLogin.loginButton.render() | raw }}
@@ -118,6 +118,10 @@ Append to both:
 ```php
 {{ craft.vippsLogin.loginButton.render('rel="external"', 'title="Login with Vipps" class="btn"') | raw }}
 ```
+
+#### ReturnURL
+
+You can add a return URL by using the `returnUrl()` function. Or, you can manually add `?r=BASE64URL(yoururl)` to the end of the button link, should you need to dynamically update with JavaScript.
 
 ## Rendering your own button
 
@@ -177,6 +181,10 @@ To show these messages in your template you need to look at the [documentation](
 | --- | --- | --- |
 | `danger` | Login failed in Vipps | `error_description` from Vipps API |
 | `danger` | Login failed in Vipps without message | 'Something went wrong while logging you in. Please try again, if the error persists contact the site administrator.' |
+
+## Using the "Automatic Return" flow option
+
+Before using this option, please read about the function and its security implications in [Automatic return from Vipps app](https://developer.vippsmobilepay.com/docs/APIs/login-api/api-guide/flows/automatic-return/).
 
 ## Changing the Password Verification template
 
