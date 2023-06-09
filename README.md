@@ -13,7 +13,7 @@ END_METADATA -->
 💥 Please use the plugin pages on [https://developer.vippsmobilepay.com](https://developer.vippsmobilepay.com/docs/vipps-plugins/). 💥
 <!-- END_COMMENT -->
 
-*This plugin is built and maintained by [Ellera AS](https://ellera.no).*
+*This plugin is built and maintained by [Ellera AS](https://ellera.no) and is hosted on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
 
 ## Description
 
@@ -24,8 +24,6 @@ With *Vipps Login for Craft CMS*, you can:
 - Get information about users and visitors via Vipps
 - Let users sign up and log in with Vipps
 - Link their existing account to Vipps
-
-This module is hosted on [GitHub](https://github.com/elleracompany/vipps-craft-login).
 
 ## Getting started
 
