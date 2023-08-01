@@ -10,7 +10,7 @@ END_METADATA -->
 # Vipps Login for Craft CMS
 
 <!-- START_COMMENT -->
-💥 Please use the plugin pages on [https://developer.vippsmobilepay.com](https://developer.vippsmobilepay.com/docs/plugins/). 💥
+💥 Please use the plugin pages on [https://developer.vippsmobilepay.com](https://developer.vippsmobilepay.com/docs/vipps-plugins/). 💥
 <!-- END_COMMENT -->
 
 *This plugin is built and maintained by [Ellera AS](https://ellera.no) and is hosted on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
