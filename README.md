@@ -9,11 +9,13 @@ END_METADATA -->
 
 # Vipps Login for Craft CMS
 
-<!-- START_COMMENT -->
-💥 Please use the plugin pages on [https://developer.vippsmobilepay.com](https://developer.vippsmobilepay.com/docs/plugins/). 💥
-<!-- END_COMMENT -->
+[![Support and development by Ellera](./docs/images/Ellera.svg)](https://ellera.no)
 
-*This plugin is built and maintained by [Ellera AS](https://ellera.no) and is hosted on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
+*This plugin is also available on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
+
+<!-- START_COMMENT -->
+💥 Please use the documentation on our website at [https://developer.vippsmobilepay.com](https://developer.vippsmobilepay.com/docs/plugins-ext/craft-login/). 💥
+<!-- END_COMMENT -->
 
 ## Description
 
@@ -247,6 +249,6 @@ Have a look at the twig template located [here](https://github.com/vippsas/vipps
 
 For Craft-related issues you should use the resources and communities available on the [Craft CMS community website](https://craftcms.com/community).
 
-For Plugin-related issues you should create a new issue in the [official repository](https://github.com/vippsas/vipps-craft-login/issues).
+For Plugin-related issues, you should create a new issue in the [official repository](https://github.com/vippsas/vipps-craft-login/issues).
 
 For Vipps-related issues, you should contact [Vipps](https://developer.vippsmobilepay.com/).
