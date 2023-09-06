@@ -9,7 +9,7 @@ END_METADATA -->
 
 # Vipps Login for Craft CMS
 
-[![Support and development by Ellera](./docs/images/Ellera.svg#gh-light-mode-only)![Support and development by Ellera](./docs/images/Ellera_dark.svg#gh-dark-mode-only)](https://ellera.no)
+[![Support and development by Ellera](./docs/images/ellera.svg#gh-light-mode-only)![Support and development by Ellera](./docs/images/ellera_dark.svg#gh-dark-mode-only)](https://ellera.no)
 
 *This plugin is also available on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
 
