@@ -9,9 +9,9 @@ END_METADATA -->
 
 # Vipps Login for Craft CMS
 
-[![Support and development by Ellera](./docs/images/ellera.svg#gh-light-mode-only)![Support and development by Ellera](./docs/images/ellera_dark.svg#gh-dark-mode-only)](https://ellera.no)
+![Support and development by Ellera ](./docs/images/ellera.svg#gh-light-mode-only)![Support and development by Ellera](./docs/images/ellera_dark.svg#gh-dark-mode-only)
 
-*This plugin is also available on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
+*This plugin is built and maintained by [Ellera AS](https://ellera.no) and is hosted on [GitHub](https://github.com/elleracompany/vipps-craft-login).*
 
 <!-- START_COMMENT -->
 💥 Please use the documentation on our website at [https://developer.vippsmobilepay.com](https://developer.vippsmobilepay.com/docs/plugins-ext/craft-login/). 💥
